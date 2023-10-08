@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>BMI CALCUATOR - RESULT</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="icon" href="icon.png" type="image/png">
+        <title>BMI CALCUATOR - RESULT</title> <!--The title -->
+        <link rel="stylesheet" type="text/css" href="styles.css"> <!--The link Cascading Style Sheets file-->
+        <link rel="icon" href="icon.png" type="image/png"> <!--The Icon -->
     </head>
     <body>
-        <h1>BMI Calculator Results</h1>
+        <h1>BMI Calculator Results</h1> <!--The header -->
         
         <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $height = $_POST["height"] / 100; // Convert height from cm to meters
-                $weight = $_POST["weight"];
-                $bmi = $weight / ($height * $height);
+                $weight = $_POST["weight"]; // get weight from the form
+                $bmi = $weight / ($height * $height); // formula to calculatr bmi
 
-                echo "<p>Body Mass Index (BMI): " . number_format($bmi, 2) . "</p>";
+                echo "<p>Body Mass Index (BMI): " . number_format($bmi, 2) . "</p>"; // show the result
 
                 // Interpretation of BMI
                 if ($bmi < 16) {
